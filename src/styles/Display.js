@@ -1,18 +1,20 @@
 import {StyleSheet} from 'react-native';
-
-export const styles = StyleSheet.create({
+export const Display = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-evenly',
-    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   container1: {
-    flex: 2,
-    width: '100%',
+    flex: 9,
+    alignItems: 'center',
+    justifyContent: 'space-around',
   },
   container2: {
-    flex: 10,
-    width: '100%',
+    flex: 1,
+  },
+  buttonstyle: {
+    alignSelf: 'center',
+    width: 40,
   },
   flatliststyle: {
     width: '100%',
@@ -45,5 +47,13 @@ export const styles = StyleSheet.create({
     borderRadius: 25,
     backgroundColor: '#575FCF',
     padding: 40,
+  },
+  container4: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingTop: 30,
+  },
+  buttonstyle1: {
+    width: '30%',
   },
 });

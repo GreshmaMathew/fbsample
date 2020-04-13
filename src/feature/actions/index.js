@@ -1,8 +1,7 @@
-import firbase from '../fb/fb';
-import {firebase} from '@react-native-firebase/database';
+import firebase from '../../api/fireBase';
 export function getBlogs() {
   return dispatch => {
-    firbase
+    firebase
       .database()
       .ref('/blogs')
       .on('value', snapshot => {
@@ -21,11 +20,22 @@ export function postBlogs(title, content) {
       .push({title, content});
   };
 }
+
 export function deleteBlogs(key) {
   return dispatch => {
     firebase
       .database()
       .ref(`/blogs/${key}`)
       .remove();
+  };
+}
+
+export function editBlogs(title, content, key) {
+  return dispatch => {
+    firebase
+      .database()
+      .ref(`/blogs`)
+      .child(key)
+      .update({title, content});
   };
 }
